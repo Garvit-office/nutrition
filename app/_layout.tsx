@@ -1,4 +1,5 @@
-﻿import '../global.css';
+﻿// app/_layout.tsx
+import '../global.css';
 import { useEffect, useState, useCallback } from 'react';
 import { View, Text } from 'react-native';
 import { Stack } from 'expo-router';
