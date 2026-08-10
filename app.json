@@ -1,0 +1,76 @@
+{
+  "expo": {
+    "name": "NutriAI",
+    "slug": "nutriai",
+    "scheme": "nutriai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "jsEngine": "hermes",
+    "newArchEnabled": true,
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F172A"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nutriai.app",
+      "jsEngine": "hermes",
+      "infoPlist": {
+        "NSCameraUsageDescription": "NutriAI uses your camera to scan meals and estimate nutrition content.",
+        "NSLocationWhenInUseUsageDescription": "NutriAI uses your location to enrich activity tracking.",
+        "NSMotionUsageDescription": "NutriAI reads your step count to track daily activity."
+      }
+    },
+    "android": {
+      "package": "com.nutriai.app",
+      "jsEngine": "hermes",
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "CAMERA",
+        "ACTIVITY_RECOGNITION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "NutriAI uses your camera to scan meals and estimate nutrition content."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "NutriAI uses your location to enrich activity tracking."
+        }
+      ],
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "NutriAI reads your step count to track daily activity."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "backgroundColor": "#0F172A"
+        }
+      ]
+    ],
+    "extra": {
+      "apiBaseUrl": "https://api.nutriai.app/v1",
+      "aiVisionEndpoint": "https://api.nutriai.app/v1/vision/scan",
+      "router": {}
+    }
+  }
+}
